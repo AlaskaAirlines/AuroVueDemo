@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="App">
-    <header class="App-header"> 
+    <header class="App-header">
       <h1>Web Components Demo</h1>
       <div id="example-container">
         <DemoComponent />
