@@ -1,7 +1,16 @@
 <template>
   <div class="Toaster">
-    <ods-button class="Toaster-btn" @click="handleClick">Toast</ods-button>
-    <ods-button class="Toaster-btn" @click="updateToastMsg">Change Toaster</ods-button>
+      <ods-inputoptions
+        ref="inputOptions"
+        id="cbx"
+        type="checkbox"
+        name="Yes/no"
+        :label="checkBoxSelections"
+        @input="handleInput"
+        for="cbx"
+        componentData='[]'></ods-inputoptions>
+    <ods-button class="Toaster-btn" @click="updateToastMsg">Change Toast Message: {{this.toastMsg}}</ods-button>
+    <ods-button class="Toaster-btn" @click="handleClick">Show me a Toast</ods-button>
   </div>
 </template>
 
@@ -14,18 +23,56 @@ const toaster = new Toaster();
 
 export default {
   name: 'DemoComponent',
-  label: 'Your Choice',
   data: function() {
     return {
-      toastMsg: "Hello!"
+      toastMsg: "Hello!",
+      inputSelection: null,
+      inputOptionsLabel: "Your Choice:",
+      componentData: [
+        {
+          "id": "radio1",
+          "value": "yes",
+          "label": "Yes",
+          "checked": false
+        },
+        {
+          "id": "radio2",
+          "value": "no",
+          "label": "No",
+          "checked": false
+        }
+      ]
     }
+  },
+  mounted() {
+    this.$refs.inputOptions.componentData = this.componentData;
   },
   methods: {
     handleClick() {
       toaster.add(this.toastMsg);
     },
+    handleInput(e) {
+      const inputValue = e.target.value;
+      this.inputSelection = inputValue;
+      let updatedComponentData = this.componentData.map(option => inputValue.includes(option.value) ?
+          { ...option, checked: true } :
+          { ...option, checked: false });
+      this.componentData = updatedComponentData;
+    },
     updateToastMsg() {
-      this.toastMsg = "Hola!";
+      if (this.toastMsg === "Hello!") {
+        this.toastMsg = "Hola!";
+      } else {
+        this.toastMsg = "Hello!";
+      }
+    }
+  },
+  computed: {
+    checkBoxString: function() {
+      return JSON.stringify(this.componentData);
+    },
+    checkBoxSelections: function() {
+      return this.inputOptionsLabel + JSON.stringify(this.inputSelection);
     }
   }
 }
