@@ -1,4 +1,4 @@
-# vue-demo
+# Auro Vue Demo
 
 ## Project setup
 ```
