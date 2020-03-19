@@ -1,15 +1,7 @@
 <template>
-  <div>
-    <ods-button @click="handleClick">Toast</ods-button>
-    <ods-inputoptions
-        ref={inputOptionsRef}
-        id="rdo"
-        type="checkbox"
-        name="rdo"
-        label="Static label"
-        onInput={handleInput}
-        for="radio1" componentData="[]"></ods-inputoptions>
-    <ods-button @click="updateToastMsg">Change Toaster</ods-button>
+  <div class="Toaster">
+    <ods-button class="Toaster-btn" @click="handleClick">Toast</ods-button>
+    <ods-button class="Toaster-btn" @click="updateToastMsg">Change Toaster</ods-button>
   </div>
 </template>
 
@@ -41,4 +33,9 @@ export default {
 
 <style scoped>
 @import "../../node_modules/@alaskaairux/ods-toast/dist/toaster.css";
+
+.Toaster-btn {
+  display: block;
+  margin-bottom: 10px;
+}
 </style>
