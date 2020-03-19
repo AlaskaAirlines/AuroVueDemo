@@ -1,7 +1,5 @@
-@import '~@alaskaairux/orion-design-tokens/dist/tokens/TokenProperties';
-@import '~@alaskaairux/orion-design-tokens/dist/tokens/TokenVariables';
-@import '~@alaskaairux/orion-web-core-style-sheets/dist/breakpoints';
-@import '~@alaskaairux/orion-web-core-style-sheets/dist/baseline';
+@import "~@alaskaairux/orion-design-tokens/dist/tokens/SCSSVariables";
+@import '~@alaskaairux/orion-web-core-style-sheets/dist/essentials';
 
 $asset-font-circular-dir: 'https://resource.alaskaair.net/stylesheets/circular/';
 @import '~@alaskaairux/orion-web-core-style-sheets/dist/fonts';
