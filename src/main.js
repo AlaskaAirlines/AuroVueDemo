@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import '@alaskaairux/orion-design-tokens/dist/tokens/CSSTokenProperties.css';
+import '@alaskaairux/orion-design-tokens/dist/tokens/CSSTokenProperties.css'
+import './index.scss'
 
 Vue.config.productionTip = false
 
