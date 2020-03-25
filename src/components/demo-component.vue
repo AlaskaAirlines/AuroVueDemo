@@ -9,7 +9,7 @@
         @input="handleInput"
         for="cbx"
         componentData='[]'></ods-inputoptions>
-    <ods-button class="Toaster-btn" @click="updateToastMsg">Change Toast Message: {{this.toastMsg}}</ods-button>
+    <ods-button class="Toaster-btn" @click="updateToastMsg">Change the Toast Message: {{this.toastMsg}}</ods-button>
     <ods-button class="Toaster-btn" @click="handleClick">Show me a Toast</ods-button>
   </div>
 </template>
